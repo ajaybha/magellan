@@ -121,16 +121,16 @@ A few common packages you might want to import within Magellan
 	
 ### Polygon
 
-	case class PolygonRecord(polygon: Polygon)
-	
-	val ring = Array(new Point(1.0, 1.0), new Point(1.0, -1.0),
-      new Point(-1.0, -1.0), new Point(-1.0, 1.0),
-      new Point(1.0, 1.0))
-    val polygons = sc.parallelize(Seq(
-        PolygonRecord(new Polygon(Array(0), ring))
-      )).toDF()
-      
-    polygons.show()
+	 case class PolygonRecord(polygon: Polygon)
+
+val ring = Array(Point(1.0, 1.0), Point(1.0, -1.0),
+  Point(-1.0, -1.0), Point(-1.0, 1.0),
+  Point(1.0, 1.0))
+val polygons = sc.parallelize(Seq(
+    PolygonRecord(Polygon(Array(0), ring))
+  )).toDF()
+
+polygons.show()
     
     +--------------------+
 	|             polygon|
