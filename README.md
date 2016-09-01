@@ -145,11 +145,11 @@ A few common packages you might want to import within Magellan
 
 ### within
 
-	polygons.select(Point(0.5, 0.5) within $"polygon").count()
+	polygons.select(Point(0.5, 0.5) within polygons("polygon")).count()
 
 ### intersects
 
-	points.join(polygons).where($"point" intersects polygons("polygon")).show()
+	points.join(polygons).where(points("point") within polygons("polygon")).show()
 	
 	+-----------------+--------------------+
 	|            point|             polygon|
