@@ -149,7 +149,7 @@ A few common packages you might want to import within Magellan
 
 ### intersects
 
-	points.join(polygons).where($"point" intersects $"polygon").show()
+	points.join(polygons).where($"point" intersects polygons("polygon")).show()
 	
 	+-----------------+--------------------+
 	|            point|             polygon|
