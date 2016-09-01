@@ -145,7 +145,7 @@ A few common packages you might want to import within Magellan
 
 ### within
 
-	polygons.select(point(0.5, 0.5) within $"polygon").count()
+	polygons.select(Point(0.5, 0.5) within $"polygon").count()
 
 ### intersects
 
